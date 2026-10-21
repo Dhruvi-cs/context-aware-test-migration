@@ -12,9 +12,16 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SUT = os.path.join(ROOT, "sut", "todo_app")
 
 
+UNSAFE_PORTS = {5060, 5061, 6000, 6566, 6665, 6666, 6667, 6668, 6669, 6697}
+
 def free_port():
-    with socket.socket() as s:
-        s.bind(("127.0.0.1", 0)); return s.getsockname()[1]
+    for _ in range(50):
+        with socket.socket() as s:
+            s.bind(("127.0.0.1", 0))
+            port = s.getsockname()[1]
+            if port not in UNSAFE_PORTS and port > 1024:
+                return port
+    return 8092
 
 
 def parse(stdout):

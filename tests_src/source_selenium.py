@@ -33,11 +33,15 @@ def reset_server():
 
 
 def fresh(login=True):
-    """Reset server state, clear cookies, optionally log in through the real login form."""
+    """Reset server state, clear cookies and storage, optionally log in through the real login form."""
     reset_server()
     d = driver()
     d.get(BASE + "/login")
     d.delete_all_cookies()
+    try:
+        d.execute_script("try { localStorage.clear(); sessionStorage.clear(); } catch(e){}")
+    except Exception:
+        pass
     if login:
         do_login("demo", "demo123")
         assert d.find_element(By.ID, "task-list")

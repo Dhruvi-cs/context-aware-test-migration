@@ -33,16 +33,14 @@ context-aware-test-migration/
 │   ├── engine.py               # 57 deterministic mutants (49 AST + 8 client JS regex)
 │   ├── killset_runner.py       # Concurrent kill-matrix and K(T) computation runner
 │   └── runner.py               # Parallel SUT mutant server manager
-├── paper/                      # Complete LaTeX paper manuscript & bibliography
-│   ├── paper.tex               # Complete SN-JNL LaTeX paper (all placeholders resolved)
-│   └── sn-bibliography.bib     # 12 complete, verified BibTeX citations
 ├── results/                    # Empirical data and ablation results
 │   ├── ablation_results.json   # Full RQ1-RQ5 quantitative findings
 │   ├── kill_matrix.json        # 57x57 mutant kill matrix
 │   ├── killset_ref_http.json   # HTTP baseline kill-set reference
 │   └── killset_selenium_shim_INDICATIVE.json
 ├── scripts/                    # Automation scripts
-│   └── run_unit_tests.py       # Baseline verification test runner
+│   ├── run_unit_tests.py       # Baseline verification test runner
+│   └── run_playwright_tests.py # Runs all 27 migrated Playwright tests
 ├── src/
 │   └── mig_eval/
 │       ├── __init__.py
@@ -139,23 +137,6 @@ The framework was evaluated across 8 real-world web applications and benchmarks 
 - **Model Comparison**: Claude 3.5 Sonnet achieved the highest $KSP$ (0.912) and lowest $SDR$ (8.8%), followed closely by GPT-4o ($KSP = 0.887$, $SDR = 10.6\%$).
 - **Refinement Convergence**: Over 78% of successfully repaired scripts converge within $k=1$ refinement cycle, and 94% converge by $k=2$.
 - **Cost**: The average end-to-end execution and API cost was \$0.042 per migrated test script.
-
----
-
-## 📄 Research Paper & LaTeX Sources
-
-The manuscript is written in the Springer Nature `sn-jnl` format (`sn-mathphys-num` standard):
-- Full LaTeX Source: [`paper/paper.tex`](paper/paper.tex)
-- Bibliography: [`paper/sn-bibliography.bib`](paper/sn-bibliography.bib)
-
-To compile the PDF locally:
-```bash
-cd paper
-pdflatex paper.tex
-bibtex paper
-pdflatex paper.tex
-pdflatex paper.tex
-```
 
 ---
 

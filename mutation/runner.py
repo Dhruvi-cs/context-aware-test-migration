@@ -9,9 +9,16 @@ SUT = os.path.join(ROOT, "sut", "todo_app")
 TESTS = os.path.join(SUT, "reference_http_tests.py")
 
 
+UNSAFE_PORTS = {5060, 5061, 6000, 6566, 6665, 6666, 6667, 6668, 6669, 6697}
+
 def free_port():
-    with socket.socket() as s:
-        s.bind(("127.0.0.1", 0)); return s.getsockname()[1]
+    for _ in range(50):
+        with socket.socket() as s:
+            s.bind(("127.0.0.1", 0))
+            port = s.getsockname()[1]
+            if port not in UNSAFE_PORTS and port > 1024:
+                return port
+    return 8092
 
 
 def run_variant(app_src, js_src):

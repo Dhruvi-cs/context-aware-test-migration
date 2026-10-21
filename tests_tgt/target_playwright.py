@@ -36,6 +36,10 @@ def fresh(login=True):
     reset_server()
     p = get_page()
     _context.clear_cookies()
+    try:
+        p.evaluate("try { localStorage.clear(); sessionStorage.clear(); } catch(e){}")
+    except Exception:
+        pass
     p.goto(BASE + "/login")
     if login:
         do_login("demo", "demo123")
