@@ -1,0 +1,118 @@
+{
+  "benchmark_summary": {
+    "sut": "TaskBoard",
+    "total_scenarios": 27,
+    "total_mutants": 57,
+    "server_mutants": 49,
+    "client_mutants": 8,
+    "source_framework": "Selenium (Python)",
+    "target_framework": "Playwright (Python)",
+    "evaluation_runs": 3
+  },
+  "task_a_generation": {
+    "Baseline-1_Direct": {
+      "syntactic_validity": 86.4,
+      "execution_success_rate": 40.7,
+      "test_pass_rate": 63.6,
+      "statement_coverage": 58.4,
+      "branch_coverage": 44.2
+    },
+    "Baseline-2_Context": {
+      "syntactic_validity": 93.8,
+      "execution_success_rate": 66.7,
+      "test_pass_rate": 77.8,
+      "statement_coverage": 76.5,
+      "branch_coverage": 68.1
+    },
+    "Baseline-3_Structured": {
+      "syntactic_validity": 97.5,
+      "execution_success_rate": 77.8,
+      "test_pass_rate": 85.7,
+      "statement_coverage": 84.2,
+      "branch_coverage": 78.6
+    },
+    "Proposed_Full": {
+      "syntactic_validity": 100.0,
+      "execution_success_rate": 92.6,
+      "test_pass_rate": 96.0,
+      "statement_coverage": 94.8,
+      "branch_coverage": 91.3
+    }
+  },
+  "task_b_migration": {
+    "Baseline-1_Direct": {
+      "syntactic_validity": 91.4,
+      "execution_success_rate": 48.1,
+      "test_pass_rate": 76.9,
+      "kill_set_preservation": 68.2,
+      "spurious_kill_rate": 9.4,
+      "silent_degradation_rate": 38.5
+    },
+    "Baseline-2_Context": {
+      "syntactic_validity": 96.3,
+      "execution_success_rate": 74.1,
+      "test_pass_rate": 85.0,
+      "kill_set_preservation": 82.5,
+      "spurious_kill_rate": 4.6,
+      "silent_degradation_rate": 25.0
+    },
+    "Baseline-3_Structured": {
+      "syntactic_validity": 98.8,
+      "execution_success_rate": 85.2,
+      "test_pass_rate": 91.3,
+      "kill_set_preservation": 90.7,
+      "spurious_kill_rate": 2.8,
+      "silent_degradation_rate": 13.0
+    },
+    "Proposed_Full": {
+      "syntactic_validity": 100.0,
+      "execution_success_rate": 96.3,
+      "test_pass_rate": 96.2,
+      "kill_set_preservation": 97.4,
+      "spurious_kill_rate": 1.2,
+      "silent_degradation_rate": 3.7
+    }
+  },
+  "refinement_progression": {
+    "generation": {
+      "k0": {"executed": 21, "passed": 18},
+      "k1": {"executed": 23, "passed": 21},
+      "k2": {"executed": 25, "passed": 23},
+      "k3": {"executed": 25, "passed": 24}
+    },
+    "migration": {
+      "k0": {"executed": 23, "passed": 21, "mean_ksp": 90.7},
+      "k1": {"executed": 25, "passed": 24, "mean_ksp": 94.2},
+      "k2": {"executed": 26, "passed": 25, "mean_ksp": 96.8},
+      "k3": {"executed": 26, "passed": 25, "mean_ksp": 97.4}
+    }
+  },
+  "model_comparison": {
+    "GPT-4o": {
+      "first_pass_migration_esr": 85.2,
+      "final_proposed_esr": 96.3,
+      "final_ksp": 97.1
+    },
+    "Claude-3.5-Sonnet": {
+      "first_pass_migration_esr": 88.9,
+      "final_proposed_esr": 96.3,
+      "final_ksp": 98.2
+    },
+    "Gemini-1.5-Pro": {
+      "first_pass_migration_esr": 81.5,
+      "final_proposed_esr": 92.6,
+      "final_ksp": 96.4
+    }
+  },
+  "statistical_significance": {
+    "test": "Wilcoxon signed-rank test",
+    "alpha": 0.05,
+    "metrics": {
+      "generation_esr": {"p_value": 0.0003, "cliffs_delta": 0.81, "interpretation": "Large"},
+      "generation_coverage": {"p_value": 0.0001, "cliffs_delta": 0.88, "interpretation": "Large"},
+      "migration_esr": {"p_value": 0.0004, "cliffs_delta": 0.79, "interpretation": "Large"},
+      "migration_ksp": {"p_value": 0.0001, "cliffs_delta": 0.84, "interpretation": "Large"},
+      "migration_sdr": {"p_value": 0.0002, "cliffs_delta": -0.74, "interpretation": "Large"}
+    }
+  }
+}

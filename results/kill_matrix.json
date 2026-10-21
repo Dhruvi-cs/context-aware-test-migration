@@ -1,0 +1,1061 @@
+{
+ "tests": [
+  "test_add_empty_rejected",
+  "test_add_task",
+  "test_add_trims_whitespace",
+  "test_clear_completed",
+  "test_delete_only_target",
+  "test_filter_active_and_done",
+  "test_health",
+  "test_ids_increment",
+  "test_login_invalid_rejected",
+  "test_login_page_renders",
+  "test_login_required_redirect",
+  "test_login_wrong_user_rejected",
+  "test_logout_clears_session",
+  "test_mutations_require_login",
+  "test_title_length_boundary",
+  "test_toggle_only_target",
+  "test_toggle_twice"
+ ],
+ "baseline_green": true,
+ "mutants": [
+  {
+   "op": "SDL",
+   "idx": 21,
+   "sub": 0,
+   "field": "body",
+   "line": 96,
+   "desc": "delete: error = None",
+   "id": "S000",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_login_page_renders"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 22,
+   "sub": 0,
+   "field": "body",
+   "line": 109,
+   "desc": "delete: session.pop('user', None)",
+   "id": "S001",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_logout_clears_session"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 23,
+   "sub": 1,
+   "field": "body",
+   "line": 117,
+   "desc": "delete: flt = request.args.get('filter', 'all')",
+   "id": "S002",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 23,
+   "sub": 3,
+   "field": "body",
+   "line": 120,
+   "desc": "delete: remaining = len([t for t in tasks if not t['done']",
+   "id": "S003",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 24,
+   "sub": 1,
+   "field": "body",
+   "line": 133,
+   "desc": "delete: title = request.form.get('title', '').strip()",
+   "id": "S004",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "CNUM",
+   "idx": 41,
+   "sub": 0,
+   "line": 8,
+   "desc": "100->101",
+   "id": "S005",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_title_length_boundary"
+   ],
+   "killed": true
+  },
+  {
+   "op": "CSTR",
+   "idx": 43,
+   "sub": 0,
+   "line": 9,
+   "desc": "'demo'->'demox'",
+   "id": "S006",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "CSTR",
+   "idx": 45,
+   "sub": 0,
+   "line": 10,
+   "desc": "'demo123'->'demo123x'",
+   "id": "S007",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 71,
+   "sub": 0,
+   "field": "body",
+   "line": 83,
+   "desc": "delete: STATE['tasks'] = []",
+   "id": "S008",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_filter_active_and_done",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 71,
+   "sub": 1,
+   "field": "body",
+   "line": 84,
+   "desc": "delete: STATE['next_id'] = 1",
+   "id": "S009",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 79,
+   "sub": 0,
+   "field": "body",
+   "line": 98,
+   "desc": "delete: user = request.form.get('username', '')",
+   "id": "S010",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_login_invalid_rejected",
+    "test_login_wrong_user_rejected",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 79,
+   "sub": 1,
+   "field": "body",
+   "line": 99,
+   "desc": "delete: pw = request.form.get('password', '')",
+   "id": "S011",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_login_invalid_rejected",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 79,
+   "sub": 3,
+   "field": "body",
+   "line": 103,
+   "desc": "delete: error = 'Invalid credentials'",
+   "id": "S012",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_login_invalid_rejected",
+    "test_login_wrong_user_rejected"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 89,
+   "sub": 0,
+   "field": "body",
+   "line": 119,
+   "desc": "delete: tasks = list(STATE['tasks'])",
+   "id": "S013",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 91,
+   "sub": 0,
+   "field": "body",
+   "line": 122,
+   "desc": "delete: tasks = [t for t in tasks if not t['done']]",
+   "id": "S014",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_filter_active_and_done"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 97,
+   "sub": 0,
+   "field": "body",
+   "line": 135,
+   "desc": "delete: flash('Title is required')",
+   "id": "S015",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 107,
+   "sub": 0,
+   "field": "body",
+   "line": 161,
+   "desc": "delete: STATE['tasks'] = [t for t in STATE['tasks'] if t['",
+   "id": "S016",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_delete_only_target"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 112,
+   "sub": 0,
+   "field": "body",
+   "line": 170,
+   "desc": "delete: STATE['tasks'] = [t for t in STATE['tasks'] if not",
+   "id": "S017",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed"
+   ],
+   "killed": true
+  },
+  {
+   "op": "ROR",
+   "idx": 145,
+   "sub": 0,
+   "line": 72,
+   "desc": "Eq->NotEq",
+   "id": "S018",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_login_invalid_rejected",
+    "test_login_required_redirect",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "ROR",
+   "idx": 162,
+   "sub": 0,
+   "line": 97,
+   "desc": "Eq->NotEq",
+   "id": "S019",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_login_invalid_rejected",
+    "test_login_page_renders",
+    "test_login_wrong_user_rejected",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 165,
+   "sub": 0,
+   "field": "body",
+   "line": 101,
+   "desc": "delete: session['user'] = user",
+   "id": "S020",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 175,
+   "sub": 0,
+   "line": 115,
+   "desc": "remove not",
+   "id": "S021",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_login_invalid_rejected",
+    "test_login_required_redirect",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "ROR",
+   "idx": 183,
+   "sub": 0,
+   "line": 121,
+   "desc": "Eq->NotEq",
+   "id": "S022",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_filter_active_and_done",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 185,
+   "sub": 0,
+   "field": "body",
+   "line": 124,
+   "desc": "delete: tasks = [t for t in tasks if t['done']]",
+   "id": "S023",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_filter_active_and_done"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 189,
+   "sub": 0,
+   "line": 131,
+   "desc": "remove not",
+   "id": "S024",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 193,
+   "sub": 0,
+   "line": 134,
+   "desc": "remove not",
+   "id": "S025",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 195,
+   "sub": 0,
+   "field": "body",
+   "line": 137,
+   "desc": "delete: flash('Title too long')",
+   "id": "S026",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_title_length_boundary"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 201,
+   "sub": 0,
+   "line": 147,
+   "desc": "remove not",
+   "id": "S027",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed",
+    "test_filter_active_and_done",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 210,
+   "sub": 0,
+   "line": 158,
+   "desc": "remove not",
+   "id": "S028",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_delete_only_target"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 218,
+   "sub": 0,
+   "line": 167,
+   "desc": "remove not",
+   "id": "S029",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed"
+   ],
+   "killed": true
+  },
+  {
+   "op": "CNUM",
+   "idx": 255,
+   "sub": 0,
+   "line": 84,
+   "desc": "1->2",
+   "id": "S030",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "CSTR",
+   "idx": 267,
+   "sub": 0,
+   "line": 97,
+   "desc": "'POST'->'POSTx'",
+   "id": "S031",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_login_invalid_rejected",
+    "test_login_wrong_user_rejected",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "LCR",
+   "idx": 272,
+   "sub": 0,
+   "line": 100,
+   "desc": "And swapped",
+   "id": "S032",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_login_invalid_rejected",
+    "test_login_wrong_user_rejected"
+   ],
+   "killed": true
+  },
+  {
+   "op": "CSTR",
+   "idx": 305,
+   "sub": 0,
+   "line": 121,
+   "desc": "'active'->'activex'",
+   "id": "S033",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_filter_active_and_done"
+   ],
+   "killed": true
+  },
+  {
+   "op": "ROR",
+   "idx": 308,
+   "sub": 0,
+   "line": 123,
+   "desc": "Eq->NotEq",
+   "id": "S034",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_title_length_boundary",
+    "test_toggle_only_target"
+   ],
+   "killed": true
+  },
+  {
+   "op": "ROR",
+   "idx": 325,
+   "sub": 0,
+   "line": 136,
+   "desc": "Gt->GtE",
+   "id": "S035",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_title_length_boundary"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 327,
+   "sub": 0,
+   "field": "body",
+   "line": 140,
+   "desc": "delete: STATE['tasks'].append({'id': STATE['next_id'], 'ti",
+   "id": "S036",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 327,
+   "sub": 1,
+   "field": "body",
+   "line": 141,
+   "desc": "delete: STATE['next_id'] += 1",
+   "id": "S037",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_toggle_only_target"
+   ],
+   "killed": true
+  },
+  {
+   "op": "SDL",
+   "idx": 339,
+   "sub": 0,
+   "field": "body",
+   "line": 152,
+   "desc": "delete: t['done'] = not t['done']",
+   "id": "S038",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed",
+    "test_filter_active_and_done",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "ROR",
+   "idx": 413,
+   "sub": 0,
+   "line": 100,
+   "desc": "Eq->NotEq",
+   "id": "S039",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_login_wrong_user_rejected",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "ROR",
+   "idx": 414,
+   "sub": 0,
+   "line": 100,
+   "desc": "Eq->NotEq",
+   "id": "S040",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_empty_rejected",
+    "test_add_task",
+    "test_add_trims_whitespace",
+    "test_clear_completed",
+    "test_delete_only_target",
+    "test_filter_active_and_done",
+    "test_ids_increment",
+    "test_login_invalid_rejected",
+    "test_logout_clears_session",
+    "test_title_length_boundary",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "CSTR",
+   "idx": 448,
+   "sub": 0,
+   "line": 123,
+   "desc": "'done'->'donex'",
+   "id": "S041",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_filter_active_and_done"
+   ],
+   "killed": true
+  },
+  {
+   "op": "ROR",
+   "idx": 484,
+   "sub": 0,
+   "line": 151,
+   "desc": "Eq->NotEq",
+   "id": "S042",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed",
+    "test_filter_active_and_done",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 573,
+   "sub": 0,
+   "line": 120,
+   "desc": "remove not",
+   "id": "S043",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_add_task",
+    "test_clear_completed",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 577,
+   "sub": 0,
+   "line": 122,
+   "desc": "remove not",
+   "id": "S044",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_filter_active_and_done"
+   ],
+   "killed": true
+  },
+  {
+   "op": "CNUM",
+   "idx": 600,
+   "sub": 0,
+   "line": 141,
+   "desc": "1->2",
+   "id": "S045",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed",
+    "test_ids_increment",
+    "test_toggle_only_target"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 608,
+   "sub": 0,
+   "line": 152,
+   "desc": "remove not",
+   "id": "S046",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed",
+    "test_filter_active_and_done",
+    "test_toggle_only_target",
+    "test_toggle_twice"
+   ],
+   "killed": true
+  },
+  {
+   "op": "ROR",
+   "idx": 615,
+   "sub": 0,
+   "line": 161,
+   "desc": "NotEq->Eq",
+   "id": "S047",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_delete_only_target"
+   ],
+   "killed": true
+  },
+  {
+   "op": "NOT",
+   "idx": 622,
+   "sub": 0,
+   "line": 170,
+   "desc": "remove not",
+   "id": "S048",
+   "target": "server",
+   "valid": true,
+   "killed_by": [
+    "test_clear_completed"
+   ],
+   "killed": true
+  },
+  {
+   "id": "C000",
+   "op": "JS-CNUM",
+   "pattern": "var MAX = 100;",
+   "repl": "var MAX = 101;",
+   "line": 0,
+   "desc": "var MAX = 100; -> var MAX = 101;",
+   "target": "client",
+   "valid": true,
+   "killed_by": [],
+   "killed": false
+  },
+  {
+   "id": "C001",
+   "op": "JS-ROR1",
+   "pattern": "len === 0",
+   "repl": "len !== 0",
+   "line": 0,
+   "desc": "len === 0 -> len !== 0",
+   "target": "client",
+   "valid": true,
+   "killed_by": [],
+   "killed": false
+  },
+  {
+   "id": "C002",
+   "op": "JS-ROR2",
+   "pattern": "len > MAX",
+   "repl": "len >= MAX",
+   "line": 0,
+   "desc": "len > MAX -> len >= MAX",
+   "target": "client",
+   "valid": true,
+   "killed_by": [],
+   "killed": false
+  },
+  {
+   "id": "C003",
+   "op": "JS-LCR",
+   "pattern": "len === 0 \\|\\| len > MAX",
+   "repl": "len === 0 && len > MAX",
+   "line": 0,
+   "desc": "len === 0 \\|\\| len > MAX -> len === 0 && len > MAX",
+   "target": "client",
+   "valid": true,
+   "killed_by": [],
+   "killed": false
+  },
+  {
+   "id": "C004",
+   "op": "JS-ARITH",
+   "pattern": "MAX - input\\.value\\.length",
+   "repl": "MAX + input.value.length",
+   "line": 0,
+   "desc": "MAX - input\\.value\\.length -> MAX + input.value.length",
+   "target": "client",
+   "valid": true,
+   "killed_by": [],
+   "killed": false
+  },
+  {
+   "id": "C005",
+   "op": "JS-TRIM",
+   "pattern": "input\\.value\\.trim\\(\\)\\.length",
+   "repl": "input.value.length",
+   "line": 0,
+   "desc": "input\\.value\\.trim\\(\\)\\.length -> input.value.length",
+   "target": "client",
+   "valid": true,
+   "killed_by": [],
+   "killed": false
+  },
+  {
+   "id": "C006",
+   "op": "JS-DISABLE",
+   "pattern": "btn\\.disabled = ",
+   "repl": "btn.disabled = false && ",
+   "line": 0,
+   "desc": "btn\\.disabled =  -> btn.disabled = false && ",
+   "target": "client",
+   "valid": true,
+   "killed_by": [],
+   "killed": false
+  },
+  {
+   "id": "C007",
+   "op": "JS-EVENT",
+   "pattern": "addEventListener\\(\"input\"",
+   "repl": "addEventListener(\"change\"",
+   "line": 0,
+   "desc": "addEventListener\\(\"input\" -> addEventListener(\"change\"",
+   "target": "client",
+   "valid": true,
+   "killed_by": [],
+   "killed": false
+  }
+ ]
+}
